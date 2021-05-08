@@ -14,6 +14,8 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
+        // @IsGranted("ROLE_ADMIN")
+        // $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('home/home.html.twig');
     }
 }
