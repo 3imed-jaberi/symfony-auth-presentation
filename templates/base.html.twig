@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Welcome!
+			{% block title %}
+				Welcome!
 			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle` and uncomment the following Encore helpers to start using Symfony UX #}
@@ -12,11 +13,27 @@
 			{#{{ encore_entry_link_tags('app') }}#}
 		{% endblock %}
 
-		{% block javascripts %}
-			{#{{ encore_entry_script_tags('app') }}#}
-		{% endblock %}
+
 	</head>
 	<body>
-		{% block body %}{% endblock %}
+		<nav>
+			<ul>
+				<li>
+					<a href="{{ path('homepage') }}">Home</a>
+				</li>
+				{% if app.user %}
+					<li>
+						<a href="/logout">Logout</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="/register">register</a>
+					</li>
+					<li>
+						<a href="/login">Login</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
 	</body>
-</html>
+</html></div></nav>{% block body %}{% endblock %}{% block javascripts %}{#{{ encore_entry_script_tags('app') }}#}{% endblock %}</body></html>
